@@ -124,11 +124,20 @@ span{
 
 /*hero start*/
 .hero{
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: var(--hero-footer-color);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
     text-align: center;
     padding-top: 200px;
     padding-bottom: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .hero-title{
     margin-top: 0;
     margin-bottom: 30px;
@@ -201,12 +210,22 @@ span{
     display: none;
 }
 
+.features-pic{
+    height: 120px;
+    width: 270px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .no-padding{
     padding-top: 0px;
 }
 .employee-description{
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
 }
 .command-title{
     margin-top: 0px;
@@ -216,7 +235,7 @@ span{
 }
 .command-role{
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 16px;
     font-weight: 400;;
     color: var(--main-color);
 }
@@ -230,6 +249,8 @@ span{
 }
 .command-item{
     padding-top: 94px;
+    background-color: #F5F4FA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .list.command,
@@ -237,10 +258,84 @@ span{
     --items: 4;
 }
 
+.command>.item{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+
+.contact-linc-icon{
+    margin-right: 10px;
+    fill: currentColor;
+    display: inline-block;
+    align-items: center;
+
+}
+
+.social-link-list,
+.header.contact-link .link,
+.footer-link-list{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-link-item:not(:last-child),
+.footer-link-item:not(:last-child){
+    margin-right: 10px;
+}
+
+
+.social-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    fill:#AFB1B8;
+}
+
+.footer .social-link{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover .social-linc-icon,
+.social-link:focus .social-linc-icon{
+fill: var(--light-color);
+}
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--accent-color);
+}
+
 .list.flex.item{
     padding-top: 50px;
     padding-bottom: 94px;
 }
+
+.clients-list{
+    --items:6;
+}
+
+.clients .item{
+    width: 170px; 
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #AFB1B8;
+}
+.clients .item:hover {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+.icon-clients{
+    fill: currentColor;
+}
+
 
 /*footer start*/
 .footer {
@@ -248,11 +343,31 @@ span{
     padding-bottom: 60px;
     background-color: var(--hero-footer-color);
 }
+
+.footer .container{
+    display: flex;
+    align-items: baseline;
+}
+
 .footer .link{
     font-weight: 400;
     line-height: 1.19;
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
+}
+.footer-title{
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--light-color);
+}
+
+.footer-link-list {
+    margin-top: 20px;
 }
 .adds{
     margin-bottom: 9px;
@@ -269,12 +384,15 @@ span{
 .footer .logo{
 
     margin-bottom: 20px;
-    display: block;
+    display: flex;
 }
 .footer-contact:not(:last-child){
 margin-bottom: 9px;
 }
 
+.footer-contacts {
+    margin-right: 70px;
+}
 
 /*footer end*/
 .portfolio-btn{
@@ -294,6 +412,7 @@ margin-bottom: 9px;
     border-radius: 4px;
     border: 0;
 }
+
 .list.filter-flex{
     margin-bottom: 50px;
 }
@@ -306,6 +425,7 @@ margin-bottom: 9px;
 .portfolio-btn:hover,
 .btn:focus{
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-btn.current{
     background-color: var(--accent-color);
@@ -317,6 +437,11 @@ margin-bottom: 9px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.pf-container .flex-element:hover,
+.pf-container .flex-element:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 
